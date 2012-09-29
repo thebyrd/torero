@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Torero Project",
+  "description": "A project made with Torero",
   "version": "0.0.0",
   "engines": {
     "node": ">=0.6.0 <0.9"
