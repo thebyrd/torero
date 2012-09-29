@@ -1,20 +1,22 @@
-# Matador
-Sane defaults and a simple structure, scaling as your application grows.
+# Torero
+Its still in progress, but the gist is that Obvious Corporation made an awesome simple MVC framework called Matador and decided not to maintain it. I&#8217;m just working on getting consistent documentation and an API that makes sense to me.
 
-Matador is a clean, organized framework for [Node.js](http://nodejs.org) architected to suit MVC enthusiasts. It gives you a well-defined development environment with flexible routing, easy controller mappings, and basic request filtering.
+Torero is a simple MVC framework for node.js that&#8217;s built on top of Matador. It&#8217;s made with the promise that I will actually maintain it.
+
+Torero is a clean, organized framework for [Node.js](http://nodejs.org) architected to suit MVC enthusiasts. It gives you a well-defined development environment with flexible routing, easy controller mappings, and basic request filtering.
 It&#8217;s built on open source libraries such as [Hogan.js](http://twitter.github.com/hogan.js) for view rendering, [Klass](https://github.com/ded/klass) for its inheritance model, [Valentine](https://github.com/ded/valentine)
 for functional development, and [Connect](http://www.senchalabs.org/connect/) to give a bundle of other Node server related helpers.
 
 # Installation
 ### Get the CLI
-    $ npm install matador -g
+    $ npm install torero -g
 
 ### Create an app
-    $ matador init my-app
-    $ cd !$ && npm install matador
+    $ torero init app-name
+    $ cd !$ && npm install torero
 
 ### Start your app
-    $ node server.js
+    $ node server
 
 # Dancing with the Bulls
 ### Build on your app
@@ -24,20 +26,37 @@ for functional development, and [Connect](http://www.senchalabs.org/connect/) to
 '/hello/:name': { 'get': 'Home.hello' }
 
 // app/controllers/HomeController.js
-hello: function (request, response, name) {
-  response.send('hello ' + name)
+module.exports = function(app, config) {
+  return app.getController("Home", true).extend()
+  .methods({
+    hello: function (request, response, name) {
+      this.render(response, 'hello', {
+        name: name
+      })
+    }
+  });
+  
 }
 ```
+Each controller is a module that takes the app and a config object as its parameters.
+
+The first argument of the getController method is the name of the controller so that Torero can keep track of references to it.
+
+The second argument of the getController method is true when you want it to return a constructor function and false when you want it to return an instance of that klass.TODO (look into klass and figure this out for suresa=)
 
 ### View Rendering
 Uses Twitter's [Hogan.js](http://twitter.github.com/hogan.js/) with layouts, partials, and i18n support.
 
 ``` js
 // app/controllers/HomeController.js
-this.render(response, 'index', {
-  title: 'Hello Bull Fighters'
+this.render(response, 'hello', {
+  name: name
 })
 ```
+we're calling render on this (the controller klass) because all controllers are sub classes of the BaseController which includes the render function. 
+
+the first parameter of render is the response variable as the first parameter and the template name as the second parameter and the data you want to pass to the template is the third parameter.
+
 
 ``` html
 <!-- app/views/layout.html -->
@@ -45,7 +64,7 @@ this.render(response, 'index', {
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>{{title}}</title>
+    <title>hello {{name}}</title>
   </head>
   <body>
     {{{body}}}
@@ -54,8 +73,8 @@ this.render(response, 'index', {
 ```
 
 ``` html
-<!-- app/views/index.html -->
-<h1>{{title}}</h1>
+<!-- app/views/hello.html -->
+<h1>{{name}}</h1>
 ```
 
 ### View Partials
@@ -251,8 +270,8 @@ The Valentine module is included as a simple tool giving you type checking, func
 
 # Scaffolding
 
-    $ matador controller [name]
-    $ matador model [name]
+    $ torero controller [name]
+    $ torero model [name]
 
 # Contributing & Development
 

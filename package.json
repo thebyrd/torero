@@ -1,24 +1,25 @@
 {
-  "name": "matador",
-  "description": "an MVC framework for Node",
-  "version": "1.1.19-beta",
-  "homepage": "https://github.com/Obvious/matador",
-  "main": "src/matador.js",
+  "name": "torero",
+  "description": "an MVC framework for Node that I'm going to maintain.",
+  "version": "0.0.1-alpha",
+  "homepage": "http://byrdhou.se/torero",
+  "main": "src/torero.js",
   "authors": [
     "Dustin Diaz <dustin@obvious.com> (https://github.com/ded)",
     "Dustin Senos <ds@obvious.com> (https://github.com/dustinsenos)",
     "Jeremy Stanley <jeremy@obvious.com> (https://github.com/azulus)",
-    "Rael Dornfest <rael@obvious.com> (https://github.com/raelity)"
+    "Rael Dornfest <rael@obvious.com> (https://github.com/raelity)",
+    "David Byrd <david@byrdhou.se> (https://github.com/davidbyrd11)"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Obvious/matador.git"
+    "url": "https://github.com/davidbyrd11/torero.git"
   },
   "engines": {
-    "node": ">=0.6.0 <0.9"
+    "node": ">=0.8.8 <0.9"
   },
   "bin": {
-    "matador": "bin/matador.js"
+    "torero": "bin/torero.js"
   },
   "dependencies": {
     "connect": "2.3.3",

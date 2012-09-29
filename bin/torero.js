@@ -4,7 +4,7 @@ var fs = require('fs')
 
 var methods = {
   init: function (path) {
-    console.log('installing Matador into ' + path)
+    console.log('installing Torero into ' + path)
     fs.mkdirSync('./' + path)
     exec('cp -R ' + __dirname + '/../src/all/ ' + path, function (err, out) {
       if (err) return console.log('error', err)
