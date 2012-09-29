@@ -3,7 +3,7 @@ var fs = require('fs')
   , exec = require('child_process').exec
 
 var methods = {
-  init: function (path) {
+  create: function (path) {
     console.log('installing Torero into ' + path)
     fs.mkdirSync('./' + path)
     exec('cp -R ' + __dirname + '/../src/all/ ' + path, function (err, out) {

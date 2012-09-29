@@ -12,7 +12,7 @@ for functional development, and [Connect](http://www.senchalabs.org/connect/) to
     $ npm install torero -g
 
 ### Create an app
-    $ torero init app-name
+    $ torero create app-name
     $ cd !$ && npm install torero
 
 ### Start your app
