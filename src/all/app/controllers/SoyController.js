@@ -3,7 +3,7 @@ module.exports = function (app, config) {
   .methods({
     index: function (req, res) {
       this.render(res, 'soy:views.index.welcome', {
-        title: 'The Matador Framework'
+        title: 'The Torero Framework'
       })
     }
   })

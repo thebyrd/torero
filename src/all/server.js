@@ -1,24 +1,24 @@
-var matador = require('matador')
+var torero = require('torero')
   , env = process.env.NODE_ENV || 'development'
-  , argv = matador.argv
+  , argv = torero.argv
   , config = require('./app/config/' + env)
-  , app = matador.createApp(__dirname, config, {})
+  , app = torero.createApp(__dirname, config, {})
   , port = argv.port || process.env.PORT || 3000
 
-// Register the matador cache helper.
-app.registerHelper('Cache', matador.helpers.CacheHelper)
+// Register the torero cache helper.
+app.registerHelper('Cache', torero.helpers.CacheHelper)
 
 app.configure(function () {
 
   app.set('view engine', 'html')
-  app.register('.html', matador.engine)
+  app.register('.html', torero.engine)
 
   // Use the cache helper's no-cache middleware.
   app.use(app.getHelper('Cache').auditHeadersMiddleware)
   app.use(app.getHelper('Cache').noCacheMiddleware)
 
-  app.use(matador.cookieParser())
-  app.use(matador.session({secret: 'boosh'}))
+  app.use(torero.cookieParser())
+  app.use(torero.session({secret: 'boosh'}))
 
   // TODO: Add JSON body parser middleware
   app.use(app.requestDecorator())
@@ -26,7 +26,7 @@ app.configure(function () {
 })
 
 app.configure('development', function () {
-  app.use(matador.errorHandler({ dumpExceptions: true, showStack: true }))
+  app.use(torero.errorHandler({ dumpExceptions: true, showStack: true }))
   app.set('soy options', {
     eraseTemporaryFiles: true
     , allowDynamicRecompile: true
@@ -34,7 +34,7 @@ app.configure('development', function () {
 })
 
 app.configure('production', function () {
-  app.use(matador.errorHandler())
+  app.use(torero.errorHandler())
 })
 
 app.configure(function () {
@@ -44,4 +44,4 @@ app.configure(function () {
 app.prefetch()
 app.mount()
 app.listen(port)
-console.log('matador running on port ' + port)
+console.log('Torero is bullfighting on ' + port)

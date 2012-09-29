@@ -633,10 +633,10 @@ module.exports.createApp = function (baseDir, configuration, options) {
 
   /**
    * Registers a helper that has been loaded or defined outside the standard folder structure.
-   * Can be used with off the shelf matador helpers, e.g:
+   * Can be used with off the shelf torero helpers, e.g:
    *
    * <pre>
-   *  app.registerHelper('Cache', matador.helpers.CacheHelper)
+   *  app.registerHelper('Cache', torero.helpers.CacheHelper)
    * </pre>
    * @param {function(Application) : Object} helperFactory A factory method that takes the application
    *    and returns a helper object.
@@ -707,7 +707,7 @@ module.exports.engine = {
  * application using `app.registerHelper(name, helper)`. e.g:
  *
  * <pre>
- *   app.registerHelper('Cache', matador.helpers.CacheHelper)
+ *   app.registerHelper('Cache', torero.helpers.CacheHelper)
  * </pre>
  */
 module.exports.helpers = {
