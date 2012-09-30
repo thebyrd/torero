@@ -225,12 +225,11 @@ By default, Models are thin with just a Base and Application Model in place. You
 // app/models/ApplicationModel.js
 module.exports = function (app, config) {
   return app.getModel('Base', true).extend(function () {
-    this.mongo = require('mongodb')
-    this.mongoose = require('mongoose')
-    this.Schema = this.mongoose.Schema
-    this.mongoose.connect('mongodb://localhost/myapp')
-  })
-}
+    this.mongoose = require('mongoose');
+    this.Schema = this.mongoose.Schema;
+    this.db = this.mongoose.createConnection('mongodb://localhost:27017/' + config.dbname);
+  });
+};
 ```
 
 Then create, for example, a UserModel.js that extended it...
@@ -238,7 +237,7 @@ Then create, for example, a UserModel.js that extended it...
 ``` js
 module.exports = function (app, config) {
   return app.getModel('Application', true).extend(function () {
-    this.DBModel = this.mongoose.model('User', new this.Schema({
+    this.DBModel = this.db.model('User', new this.Schema({
         name: { type: String, required: true, trim: true }
       , email: { type: String, required: true, lowercase: true, trim: true }
     }))
@@ -290,3 +289,14 @@ Obviously, [Dustin Senos](https://github.com/dustinsenos) & [Dustin Diaz](https:
 Copyright 2012 [Obvious Corporation](http://obvious.com)
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
+
+
+# TODO
+* Default models to Mongoose 3 so admin generators work
+* build in backbone/require.js (give access to the same server side hogan templates)
+* Setup an image uploading service that puts images on S3/Cloudfront
+* Create a memcached service (use elasticache)
+* Explain Helpers vs Services: (Helpers are related to a Model/Controller pair; Services are extensions to the framework)
+* configure it to use LESS (use the express library)
+* create an AuthService for requiring login (have facebook & twitter auth built in)
+* Explain Services & Helpers in docs
