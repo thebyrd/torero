@@ -272,6 +272,9 @@ The Valentine module is included as a simple tool giving you type checking, func
     $ torero controller [name]
     $ torero model [name]
 
+# AWS Setup
+Torero is tightly integrated with Amazon Web Services. All of the images are uploaded to the S3 bucket and distributed by a cloudfront distribution that should both be specified in config/production.js. You will also need to fill in your AWS key and secret. 
+
 # Contributing & Development
 
 Questions, pull requests, bug reports are all welcome. Submit them here on Github.
