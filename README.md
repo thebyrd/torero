@@ -295,11 +295,9 @@ Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/L
 
 
 # TODO
-* Default models to Mongoose 3 so admin generators work
+* Create admin generators
 * build in backbone/require.js (give access to the same server side hogan templates)
 * Setup an image uploading service that puts images on S3/Cloudfront
 * Create a memcached service (use elasticache)
 * Explain Helpers vs Services: (Helpers are related to a Model/Controller pair; Services are extensions to the framework)
 * configure it to use LESS (use the express library)
-* create an AuthService for requiring login (have facebook & twitter auth built in)
-* Explain Services & Helpers in docs
