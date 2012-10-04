@@ -23,7 +23,7 @@ app.configure(function () {
 
   app.use(app.requestDecorator());
   app.use(app.preRouter());
-  app.use(torero.bodyParser());
+  app.use(torero.bodyParser({ uploadDir: process.env.TMP || process.env.TMPDIR || process.env.TEMP || __dirname + 'app/public/images/tmp' || process.cwd() }));
 });
 
 app.configure('development', function () {
