@@ -334,8 +334,8 @@ module.exports.createApp = function (baseDir, configuration, options) {
    *
    * @returns {Function} middleware
    */
-   app.preRouter = function preRouter() {
-    return function preRouter (req, res, next) {
+  app.preRouter = function preRouter() {
+    return function preRouter(req, res, next) {
       var matcher = app._pathMatchers[req.method === 'HEAD' ? 'GET' : req.method]
       // check for any handler for the http method first
       if (!matcher) return next()
@@ -358,8 +358,8 @@ module.exports.createApp = function (baseDir, configuration, options) {
         }
       }
       return next()
-    }
-  }
+    };
+  };
 
   /**
    * Create the actual router to route the request to a controller action
@@ -412,7 +412,7 @@ module.exports.createApp = function (baseDir, configuration, options) {
    * @returns {Object} app
    */
   app.createServer = function createServer(port) {
-    app.use(responseRouter)
+    app.use(responseRouter);
     http.createServer(app).listen(port)
     return app
   }
