@@ -292,12 +292,3 @@ Obviously, [Dustin Senos](https://github.com/dustinsenos) & [Dustin Diaz](https:
 Copyright 2012 [Obvious Corporation](http://obvious.com)
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
-
-
-# TODO
-* Create admin generators
-* build in backbone/require.js (give access to the same server side hogan templates)
-* Setup an image uploading service that puts images on S3/Cloudfront
-* Create a memcached service (use elasticache)
-* Explain Helpers vs Services: (Helpers are related to a Model/Controller pair; Services are extensions to the framework)
-* configure it to use LESS (use the express library)
