@@ -1,5 +1,5 @@
 # Torero
-Its still in progress, but the gist is that Obvious Corporation made an awesome simple MVC framework called Matador and decided not to maintain it. I&#8217;m just working on getting consistent documentation and an API that makes sense to me.
+Its still in progress, but the gist is that Obvious Corporation made an awesome simple MVC framework called Matador. I&#8217;m just working on getting consistent documentation and an API that makes sense to me.
 
 Torero is a simple MVC framework for node.js that&#8217;s built on top of Matador. It&#8217;s made with the promise that I will actually maintain it.
 
