@@ -1,5 +1,5 @@
 # Torero
-Its still in progress, but the gist is that Obvious Corporation made an awesome simple MVC framework called Matador. I&#8217;m just working on getting consistent documentation and an API that makes sense to me.
+Its still in progress, but the gist is that Obvious Corporation made an awesome simple MVC framework called Matador. I&#8217;m trying build an eCommerce platform on top of it.
 
 Torero is a simple MVC framework for node.js that&#8217;s built on top of Matador. It&#8217;s made with the promise that I will actually maintain it.
 
@@ -283,12 +283,11 @@ When submitting pull requests, please run through the linter to conform to the f
     $ npm install -d
     $ npm run-script lint
 
-# Authors
+# Matador Authors
+[Dustin Senos](https://github.com/dustinsenos), [Dustin Diaz](https://github.com/ded)
 
-Obviously, [Dustin Senos](https://github.com/dustinsenos) & [Dustin Diaz](https://github.com/ded)
 
-# License
-
+# Matador License
 Copyright 2012 [Obvious Corporation](http://obvious.com)
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
