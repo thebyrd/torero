@@ -48,7 +48,7 @@ app.configure(function () {
   app.use(app.router({}));
 });
 
-app.prefetch()
-app.mount()
-app.listen(port)
-console.log('Torero is bullfighting on ' + port)
+app.prefetch();
+app.mount();
+app.listen(port);
+console.log('Torero is bullfighting on ' + port);
