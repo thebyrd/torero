@@ -36,6 +36,11 @@ app.configure('development', function () {
     showStack: true
   }));
 
+  app.set('soy options', {
+    eraseTemporaryFiles: true,
+    allowDynamicRecompile: true
+  });
+  
 });
 
 app.configure('production', function () {
