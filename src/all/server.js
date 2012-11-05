@@ -13,6 +13,9 @@ app.configure(function () {
   app.set('view engine', 'html');
   app.register('.html', torero.engine);
 
+  //use less
+  app.use(require('less-middleware')({ src: __dirname + '/public' }));
+
   // Use the cache helper's no-cache middleware.
   app.use(app.getHelper('Cache').auditHeadersMiddleware);
   app.use(app.getHelper('Cache').noCacheMiddleware);
@@ -32,11 +35,6 @@ app.configure('development', function () {
     dumpExceptions: true,
     showStack: true
   }));
-
-  app.set('soy options', {
-    eraseTemporaryFiles: true,
-    allowDynamicRecompile: true
-  });
 
 });
 

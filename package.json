@@ -29,7 +29,7 @@
     "hogan.js": "*",
     "optimist": "*",
     "uglify-js": ">=1.2.5",
-    "soynode": ">=0.1.3"
+    "less-middleware": "~0.1.7"
   },
   "devDependencies": {
     "jshint": "0.5.8"
