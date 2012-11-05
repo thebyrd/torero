@@ -1,7 +1,7 @@
 {
   "name": "torero",
   "description": "an MVC framework for Node that I'm going to maintain.",
-  "version": "0.0.6-alpha",
+  "version": "0.0.7-alpha",
   "homepage": "http://byrdhou.se/torero",
   "main": "src/torero.js",
   "authors": [
