@@ -51,6 +51,9 @@ app.configure(function () {
   app.use(app.router({}));
 });
 
+var tester = require('./tests');
+tester(app, config);
+
 app.prefetch();
 app.mount();
 app.listen(port);
