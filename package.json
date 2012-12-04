@@ -28,7 +28,7 @@
     "colors": "*",
     "hogan.js": "*",
     "optimist": "*",
-    "uglify-js": ">=1.2.5",
+    "uglify-js": "2.2.1",
     "soynode": ">=0.1.3",
     "less-middleware": "~0.1.7"
   },
